@@ -1,0 +1,131 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px; /* 40% smaller */
+  margin: 3px 0; /* 40% smaller */
+  background: #f4f4f4;
+  border-radius: 3px; /* 40% smaller */
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 60%; /* 40% smaller text */
+}
+
+.task-item:hover {
+  background: #ddd;
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.delete-btn {
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1.2px; /* Reduced letter spacing */
+  box-shadow: 2px 0px 0px #00E6F6; /* Slightly smaller shadow */
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 3px 6px; /* 40% smaller */
+  font-size: 8px; /* 40% smaller */
+  border-radius: 3px; /* 40% smaller */
+}
+
+.delete-btn:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -4px 0 0);
+  --slice-2: inset(50% -4px 30% 0);
+  --slice-3: inset(10% -4px 85% 0);
+  --slice-4: inset(40% -4px 43% 0);
+  --slice-5: inset(80% -4px 5% 0);
+
+  content: 'DELETE';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -2px -2px 0px #F8F005, 2px 2px 0px #00E6F6; /* Reduced text shadow */
+  clip-path: var(--slice-0);
+}
+
+.delete-btn:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-6px, -3px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(3px, 3px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-3px, 3px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 2px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-2px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(2px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(2px, 3px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-3px, 3px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(6px, -3px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-3px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .delete-btn,
+  .delete-btn:after {
+    width: 90px; /* 40% smaller */
+    height: 36px; /* 40% smaller */
+    line-height: 38px; /* 40% smaller */
+  }
+}
+
+.task-item {
+  color: #333; /* Darker text for better readability */
+}
+
+@media (max-width: 768px) {
+  .task-item {
+    color: #111; /* Even darker on smaller screens */
+  }
+}

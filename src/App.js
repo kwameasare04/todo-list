@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useRef } from 'react';
 import InputTask from './component/InputTask';
@@ -8,12 +7,12 @@ function App() {
   const [task, setTask] = useState(([
     {
     id: 1,
-    text: 'Buy Flowers',
+    text: 'Meet Jonny Silverhand',
     completed: true
     },
     {
     id: 2,
-    text: 'Meet up with Hannah',
+    text: 'Explore NightCity',
     completed: false
     }
     ]));
@@ -24,12 +23,26 @@ function App() {
     setTask((prevTasks) => [...prevTasks, newTask]);
     nextId.current += 1; // Increment ID for the next task
   };
+
+  const toggleTask = (id) => {
+    setTask(
+      task.map(task =>
+        task.id === id ? { ...task, completed: !task.completed } : task //returns a task object with the task.completed flipped 
+      )
+    );
+  };
+
+    // Delete Task
+    const deleteTask = (id) => {
+      setTask(task.filter(task => task.id !== id)); //creates a new task array without the selected id
+    };
+
   return (
 <div>
   <InputTask addTask={addTask}/>
   <ul>
   {task.length > 0 ? (
-    task.map((t, index) => <ListItem key={index} task={t} />)
+    task.map((t, index) => <ListItem key={index} task={t} toggleTask={toggleTask} deleteTask={deleteTask} />)
   ) : (
     <p>No tasks to show</p>
   )}
