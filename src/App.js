@@ -8,12 +8,12 @@ function App() {
   const [task, setTask] = useState(([
     {
     id: 1,
-    text: 'Doctor Appointment',
+    text: 'Buy Flowers',
     completed: true
     },
     {
     id: 2,
-    text: 'Meeting at Work',
+    text: 'Meet up with Hannah',
     completed: false
     }
     ]));

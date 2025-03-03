@@ -1,17 +1,16 @@
-
 /* CSS */
 .button-49,
 .button-49:after {
-  width: 150px;
-  height: 76px;
-  line-height: 78px;
-  font-size: 20px;
+  width: 120px; /* Reduced width */
+  height: 50px; /* Reduced height */
+  line-height: 52px; /* Adjusted line height */
+  font-size: 16px; /* Smaller font */
   font-family: 'Bebas Neue', sans-serif;
   background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
   border: 0;
   color: #fff;
-  letter-spacing: 3px;
-  box-shadow: 6px 0px 0px #00E6F6;
+  letter-spacing: 2px; /* Adjusted spacing */
+  box-shadow: 4px 0px 0px #00E6F6; /* Slightly smaller shadow */
   outline: transparent;
   position: relative;
   user-select: none;
@@ -35,7 +34,7 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  text-shadow: -2px -2px 0px #F8F005, 2px 2px 0px #00E6F6;
   clip-path: var(--slice-0);
 }
 
@@ -47,43 +46,43 @@
 @keyframes glitch {
   0% {
     clip-path: var(--slice-1);
-    transform: translate(-20px, -10px);
+    transform: translate(-15px, -8px);
   }
   10% {
     clip-path: var(--slice-3);
-    transform: translate(10px, 10px);
+    transform: translate(8px, 8px);
   }
   20% {
     clip-path: var(--slice-1);
-    transform: translate(-10px, 10px);
+    transform: translate(-8px, 8px);
   }
   30% {
     clip-path: var(--slice-3);
-    transform: translate(0px, 5px);
+    transform: translate(0px, 4px);
   }
   40% {
     clip-path: var(--slice-2);
-    transform: translate(-5px, 0px);
+    transform: translate(-4px, 0px);
   }
   50% {
     clip-path: var(--slice-3);
-    transform: translate(5px, 0px);
+    transform: translate(4px, 0px);
   }
   60% {
     clip-path: var(--slice-4);
-    transform: translate(5px, 10px);
+    transform: translate(4px, 8px);
   }
   70% {
     clip-path: var(--slice-2);
-    transform: translate(-10px, 10px);
+    transform: translate(-8px, 8px);
   }
   80% {
     clip-path: var(--slice-5);
-    transform: translate(20px, -10px);
+    transform: translate(15px, -8px);
   }
   90% {
     clip-path: var(--slice-1);
-    transform: translate(-10px, 0px);
+    transform: translate(-8px, 0px);
   }
   100% {
     clip-path: var(--slice-1);
@@ -94,8 +93,8 @@
 @media (min-width: 768px) {
   .button-49,
   .button-49:after {
-    width: 200px;
-    height: 86px;
-    line-height: 88px;
+    width: 150px; /* Adjusted size for larger screens */
+    height: 60px;
+    line-height: 62px;
   }
 }
